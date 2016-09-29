@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR">
+	<Properties>
+		<property name="log-path">${sys:user.home}/logs</property>
+		<property name="log-name">WASADC_Chapter3</property>
+	</Properties>
+  <Appenders>
+    <RollingFile name="RollingFile" fileName="${log-path}/${log-name}.log"
+                 filePattern="${log-path}/$${date:yyyy-MM}/${log-name}-%d{MM-dd-yyyy}-%i.log.gz">
+      <PatternLayout>
+        <Pattern>%d %5p (%F:%L) - %m%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy />
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="5"/>
+    </RollingFile>
+  </Appenders>
+  <Loggers>
+    <Root level="info">
+      <AppenderRef ref="RollingFile"/>
+    </Root>
+  </Loggers>
+</Configuration>
