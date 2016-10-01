@@ -39,7 +39,7 @@ public class SpringApplicationInitConfig implements ApplicationListener<Applicat
 
 	@Bean
 	public CalculationService getCalculationService() {
-		System.out.println("inst calc -");
+		logger.info("My Calculation service is ready");
 		return new CalculationServiceIml();
 	}
 }
