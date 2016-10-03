@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -20,6 +21,7 @@ import com.wasadc.calc.CalculationServiceIml;
  *
  */
 @Configuration
+@ComponentScan(basePackages = "com.wasadc")
 public class SpringApplicationInitConfig implements ApplicationListener<ApplicationEvent> {
 
 	private static final Logger logger = LogManager.getLogger(SpringApplicationInitConfig.class);

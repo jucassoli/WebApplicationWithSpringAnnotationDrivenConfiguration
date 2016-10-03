@@ -28,7 +28,7 @@ public class MyAppInitializer implements WebApplicationInitializer {
 
 		// Initiate Spring context and scan for services annotated
 		AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-        context.setConfigLocation("com.wasadc");
+        context.setConfigLocation("com.wasadc.common.init");
         servletContext.addListener(new ContextLoaderListener(context));
         
 	}
