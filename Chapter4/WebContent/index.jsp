@@ -8,7 +8,7 @@
 </head>
 <body>
 	<p>This is the code example of the Chapter 4<p>
-	<p>Example 1: <a href="<%=request.getContextPath()%>/show">Click here</a></p>
-	<p>Example 2: <a href="<%=request.getContextPath()%>/testme">Click here</a></p>
+	<p>Example 1, simple controller: <a href="<%=request.getContextPath()%>/s/home">Click here</a></p>
+	<p>Example 2, AJAX call: <a href="<%=request.getContextPath()%>/s/getMessage">Click here</a></p>
 </body>
 </html>
