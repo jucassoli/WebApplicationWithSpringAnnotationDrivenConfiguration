@@ -10,5 +10,6 @@
 	<p>This is the code example of the Chapter 4<p>
 	<p>Example 1, simple controller: <a href="<%=request.getContextPath()%>/s/home">Click here</a></p>
 	<p>Example 2, AJAX call: <a href="<%=request.getContextPath()%>/s/getMessage">Click here</a></p>
+	<p>Example 3, upload file: <a href="<%=request.getContextPath()%>/s/upload">Click here</a></p>
 </body>
 </html>
