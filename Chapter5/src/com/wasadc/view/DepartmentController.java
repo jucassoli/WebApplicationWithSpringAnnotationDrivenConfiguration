@@ -4,7 +4,13 @@
 package com.wasadc.view;
 
 import java.io.IOException;
+import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,6 +36,9 @@ public class DepartmentController {
 	
 	@Autowired
 	private EmployeeRepository empRep;
+	
+	@Autowired
+	private EntityManager em;
 	
 	@RequestMapping("/addDepartment")
 	public String addDepartment(HttpServletRequest request,
@@ -67,9 +76,14 @@ public class DepartmentController {
 	public ModelAndView listDepartment(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		Iterable<Department> allDepartment = departRep.findAll();
+		CriteriaBuilder cbuilder = em.getCriteriaBuilder();
+		CriteriaQuery<Department> query = cbuilder.createQuery(Department.class);
+		Root<Department> from = query.from(Department.class);
 		
-		return new ModelAndView("employee/listDepartment", "allDepartment", allDepartment);
+		TypedQuery<Department> typedQuery = em.createQuery(query);
+		List<Department> resultList = typedQuery.getResultList();
+		
+		return new ModelAndView("employee/listDepartment", "allDepartment", resultList);
 	}
 	
 	@RequestMapping("/deleteDepartment")

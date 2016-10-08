@@ -1,5 +1,5 @@
+<%@page import="java.util.List"%>
 <%@page import="com.wasadc.domain.Department"%>
-<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.wasadc.domain.Employee"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -12,7 +12,7 @@
 </head>
 <body>
 <%
-	Iterable<Department> allDepartment = (Iterable<Department>) request.getAttribute("allDepartment");
+	List<Department> allDepartment = (List<Department>) request.getAttribute("allDepartment");
 %>
 
 	<h1>Departments List:</h1><br>
