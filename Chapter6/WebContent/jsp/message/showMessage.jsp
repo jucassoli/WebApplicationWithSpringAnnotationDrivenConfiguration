@@ -3,11 +3,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Chapter 6</title>
+<title>My Message</title>
 </head>
 <body>
-	<p>This is the code example of the Chapter 6<p>
-	<p>Example JMX: <a href="<%=request.getContextPath()%>/s/getMessage">Click here</a></p>
+
+<h1>Message test</h1>
+
+<p>Message Test</span></p>
+
+<p>Result: <%=request.getAttribute("msg")%></p>
+
 </body>
 </html>
