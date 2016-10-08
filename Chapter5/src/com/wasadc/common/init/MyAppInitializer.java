@@ -26,7 +26,7 @@ public class MyAppInitializer implements WebApplicationInitializer {
 	public void onStartup(ServletContext servletContext) throws ServletException {
 		
 		// Some useful information
-		logger.info("Chapter 4 Example version 1.0.0");
+		logger.info("Chapter 5 Example version 1.0.0");
 		logger.info("OS: " + System.getProperty("os.name") + ", version " + System.getProperty("os.version")
 			+ ", Archtecture " + System.getProperty("os.arch"));
 		logger.info("Processors: " + Runtime.getRuntime().availableProcessors());
